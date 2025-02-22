@@ -1,0 +1,14 @@
+Flask
+torch
+torchvision
+Pillow
+flask-cors
+flask
+flask-cors
+flask-sqlalchemy
+flask-migrate
+requests
+python-dotenv
+pillow
+torch
+torchvision
