@@ -12,3 +12,9 @@ python-dotenv
 pillow
 torch
 torchvision
+Flask
+Flask-SQLAlchemy
+Flask-CORS
+python-dotenv
+requests
+werkzeug

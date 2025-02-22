@@ -1,6 +1,5 @@
 import requests
 import base64
-import os
 from ..config import Config
 
 def identify_plant(image_data):

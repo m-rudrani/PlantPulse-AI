@@ -1,14 +1,25 @@
 from flask import Blueprint, request, jsonify
+from werkzeug.security import generate_password_hash, check_password_hash
+from ..models import db, User
 
-auth_bp = Blueprint("auth", __name__)
+bp = Blueprint("auth", __name__, url_prefix="/auth")
 
-@auth_bp.route("/login", methods=["POST"])
+@bp.route("/register", methods=["POST"])
+def register():
+    data = request.json
+    hashed_password = generate_password_hash(data["password"])
+    new_user = User(username=data["username"], password=hashed_password)
+
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify({"message": "User registered successfully"}), 201
+
+@bp.route("/login", methods=["POST"])
 def login():
-    data = request.get_json()
-    username = data.get("username")
-    password = data.get("password")
+    data = request.json
+    user = User.query.filter_by(username=data["username"]).first()
 
-    if username == "admin" and password == "password":  # Replace with real authentication logic
-        return jsonify({"message": "Login successful", "token": "mocked_jwt_token"}), 200
-
+    if user and check_password_hash(user.password, data["password"]):
+        return jsonify({"message": "Login successful"}), 200
     return jsonify({"error": "Invalid credentials"}), 401

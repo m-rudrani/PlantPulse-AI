@@ -1,27 +1,26 @@
 from flask import Blueprint, request, jsonify
 from ..services.watsonx import identify_plant, assess_plant_health
 
-plant_analysis_bp = Blueprint("plant_analysis", __name__)
+bp = Blueprint("plant_analysis", __name__, url_prefix="/plant")
 
-@plant_analysis_bp.route("/identify", methods=["POST"])
-def identify():
-    if "image" not in request.files:
-        return jsonify({"error": "No image provided"}), 400
+@bp.route("/identify", methods=["POST"])
+def plant_identification():
+    image_file = request.files.get("file")
+    if not image_file:
+        return jsonify({"error": "No image file provided"}), 400
 
-    image = request.files["image"].read()
-    plant_name = identify_plant(image)
+    image_data = image_file.read()
+    plant_name = identify_plant(image_data)
 
     return jsonify({"plant_name": plant_name})
 
-@plant_analysis_bp.route("/assess", methods=["POST"])
-def assess():
-    if "image" not in request.files:
-        return jsonify({"error": "No image provided"}), 400
+@bp.route("/health", methods=["POST"])
+def plant_health():
+    image_file = request.files.get("file")
+    if not image_file:
+        return jsonify({"error": "No image file provided"}), 400
 
-    image = request.files["image"].read()
-    health_status, recommendations = assess_plant_health(image)
+    image_data = image_file.read()
+    health_status, recommendations = assess_plant_health(image_data)
 
-    return jsonify({
-        "health_status": health_status,
-        "recommendations": recommendations
-    })
+    return jsonify({"health_status": health_status, "recommendations": recommendations})
