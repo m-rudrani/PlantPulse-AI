@@ -15,6 +15,7 @@ const Login = ({ onLogin }) => {
   };
 
   return (
+    <div className="content-box">
     <div className="flex flex-col items-center justify-center min-h-screen bg-white p-6 text-center">
       <h1 className="text-5xl md:text-6xl font-bold text-green-600">Welcome to PlantPulse</h1>
       <p className="text-lg text-gray-600 mt-2">AI-powered plant health detection and disease analysis.</p>
@@ -26,8 +27,8 @@ const Login = ({ onLogin }) => {
       {error && <p className="text-red-500 mt-2">{error}</p>}
       <p className="mt-4">Don't have an account? <Link to="/register" className="text-blue-500">Register</Link></p>
       </div>
-      <p className="text-sm text-gray-400 mt-4">Ensure the plant is well-lit and clear for accurate analysis.</p>
-    </div>
+      </div>
+      </div>
   
   );
 };
