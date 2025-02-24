@@ -31,7 +31,7 @@ This project was built during the **IBM Generative AI Hackathon** to advance AI-
 
 | **Login Page** | **Home Page** | **Disease Info Page** |
 |---------------|-------------|----------------|
-| ![Login](assets/1.png) | ![Home](assets/home.png) | ![Disease](assets/2.png) |
+| ![Login](assets/login.png) | ![Home](assets/home.png) | ![Disease](assets/2.png) |
 
 | **Disease Detection** | **Disease Info Page** |
 |----------------------|----------------------|
