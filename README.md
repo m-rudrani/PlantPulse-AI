@@ -1,92 +1,82 @@
-# PlantPulse-AI
-📌 PlantPulse – AI-Powered Plant Health & Safety Assistant
-🌱 Identify plants, detect toxicity, and receive AI-driven health recommendations instantly.
-🚀 Empowering farmers, pet owners, and agritech with smart, data-driven plant insights.
+# 🌿 PlantPulse AI  
+*A Generative AI Project for the IBM Granite Hackathon*  
 
-📖 Table of Contents
-Introduction
-Features
-Tech Stack
-Installation & Setup
-Usage
-Future Roadmap
-Contributing
-License
-Contact
+🚀 **PlantPulse AI** is an AI-powered application that leverages **IBM Watson AI & Generative AI** to detect plant diseases from images. It helps farmers and researchers improve crop health by providing accurate disease identification.  
 
-🌿 Introduction
-PlantPulse is an AI-powered assistant designed to help users:
-✅ Instantly identify plants using computer vision
-✅ Detect toxicity levels and warn about harmful plants
-✅ Provide plant health recommendations based on real-time data
-✅ Integrate with AgriGateFlow to support smart greenhouse automation
-🔗 Built for farmers, urban gardeners, pet owners, and agribusinesses, PlantPulse combines AI, IoT, and agritech to enhance plant safety and care.
+---
 
-✨ Features
-📷 AI-Powered Plant Identification – Upload an image to recognize plant species
-☠️ Toxicity Detection – Get alerts for plants that are harmful to pets or livestock
-📊 Health Analysis – Receive insights on soil, moisture, and plant health
-🔗 AgriGateFlow Integration – Sync with greenhouse sensors for real-time monitoring
-📱 Web App Interface – Easy-to-use UI for mobile and desktop
+## 🏆 IBM Generative AI Hackathon  
 
-🛠 Tech Stack
-Backend: Python, FastAPI
-Frontend: React, Vite
-AI/ML: watsonxai, IBM granite
-Database: SQLite, 
-Deployment: Render
+This project was built during the **IBM Generative AI Hackathon** to advance AI-driven agriculture solutions.  
 
-💻 Installation & Setup
-🔹 Clone the Repository
-bash
-CopyEdit
-git clone
-https://github.com/Nyambura-climate/PlantPulse-AI.git 
-cd plantpulse
+- ⏳ **48-hour challenge** to develop an AI-powered solution.  
+- 🤖 **AI-driven plant disease detection** using IBM Watson AI.  
+- 🔗 **Tech Stack:** React.js, Flask, IBM Watson AI, SQLAlchemy, Tailwind CSS.  
 
-🔹 Install Dependencies
-bash
-CopyEdit
-pip install -r requirements.txt
-npm install  # For frontend setup (if using React)
+---
 
-🔹 Run the Application
-Backend (Python FastAPI)
-bash
-CopyEdit
-uvicorn app:main --reload
+## 🚀 Features  
 
-Frontend (Streamlit)
-bash
-CopyEdit
-streamlit run app.py
+**AI-driven disease detection** using IBM Watson AI.  
+**Interactive dashboard** built with React-Vite & Tailwind CSS.  
+**Secure authentication** using JWT.  
+**Database integration** with SQLite for disease records.  
 
+📌 **[Setup & Installation →](SETUP.md)**  
+📌 **[Meet the Contributors →](CONTRIBUTORS.md)**  
 
-🚀 Usage
-1️⃣ Upload a plant image via the web app
-2️⃣ AI analyzes and identifies the plant species
-3️⃣ Toxicity is checked against known plant databases
-4️⃣ Get actionable recommendations for plant care
+---
 
-🌍 Future Roadmap
-✅ Expand AI training dataset for better identification accuracy
-✅ Implement IoT sensor support for real-time plant health tracking
-✅ Deploy a mobile app for offline plant identification
-✅ Offer API access for agritech startups and farm management tools
+## 📸 Screenshots  
 
-🤝 Contributing
-We welcome contributions! To get started:
-Fork this repo
-Create a new branch (feature-branch)
-Commit your changes (git commit -m "Added new feature")
-Push to GitHub (git push origin feature-branch)
-Open a Pull Request (PR)
+| **Login Page** | **Home Page** | **Disease Info Page** |
+|---------------|-------------|----------------|
+| ![Login](assets/1.png) | ![Home](assets/home.png) | ![Disease](assets/2.png) |
 
-📜 License
-This project is licensed under the MIT License.
+---
+# 🛠️ Setup & Installation  
 
-📧 Contact
-🌱 Project Lead: Nyambura Gachahi
-🚍Front-end developer: Rudrani Mahajan
-🖥️Back-end developer: Amon Cheruiyot
-🔗 GitHub Repo: PlantPulse 
+Follow these steps to install and run **PlantPulse AI** locally.  
+
+### ** Clone the Repository**
+
+git clone https://github.com/your-repo/plantpulse-ai.git
+cd plantpulse-ai
+
+### ** Setup Environment **
+SECRET_KEY=your_secret_key
+DATABASE_URL=sqlite:///database.db
+IBM_WATSONX_API_KEY=your_ibm_api_key
+IBM_WATSONX_URL=your_ibm_url
+
+### **Initialize & Run Flask Backend **
+cd backend
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+flask run
+
+### **Install & Run Frontend (React)++
+cd frontend
+npm install
+npm run dev
+
+---
+
+### 📄 **CONTRIBUTORS** 
+
+Meet the amazing team behind **PlantPulse AI**!  
+
+| Name         | Role                      | GitHub Profile |
+|-------------|---------------------------|---------------|
+| Nyambura Gachahi | Lead  | [GitHub](https://github.com/Nyambura-climate)  |
+| Rudrani Mahajan  | Frontend Developer      | [GitHub](https://github.com/m-rudrani)  |
+|Amon Cheruiyot   | Backend & AI Developer  | [GitHub](https://github.com/AmonCheruiyot)  |
+
+---
+## ⭐ Support & Contributions  
+
+If you find this project helpful, please **⭐ star this repo**!  
+Want to contribute? Open a **pull request** or create an **issue**.  
+
+🚀 **Happy Coding!** 🚀  
