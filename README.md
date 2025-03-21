@@ -42,25 +42,25 @@ This project was built during the **IBM Generative AI Hackathon** to advance AI-
 
 Follow these steps to install and run **PlantPulse AI** locally.  
 
-### ** Clone the Repository**
+### Clone the Repository
 
 git clone https://github.com/your-repo/plantpulse-ai.git
 cd plantpulse-ai
 
-### ** Setup Environment **
+### Setup Environment
 SECRET_KEY=your_secret_key
 DATABASE_URL=sqlite:///database.db
 IBM_WATSONX_API_KEY=your_ibm_api_key
 IBM_WATSONX_URL=your_ibm_url
 
-### **Initialize & Run Flask Backend **
+### Initialize & Run Flask Backend
 cd backend
 flask db init
 flask db migrate -m "Initial migration"
 flask db upgrade
 flask run
 
-### **Install & Run Frontend (React)++
+### Install & Run Frontend (React)++
 cd frontend
 npm install
 npm run dev
